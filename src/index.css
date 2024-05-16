@@ -219,7 +219,7 @@ body {
 .step-item:not(:first-child):before {
   content: "";
   position: absolute;
-  top: calc(50% - 30px);
+  top: calc(50% - 27px);
   height: 6px;
   width: 100%;
   transform: translateY(-50%);
@@ -518,7 +518,7 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
   .shipment-details-container {
     flex-direction: column;
   }
@@ -778,7 +778,7 @@ body {
   top: 200px;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
   .navbar ul {
     gap: 20px;
   }
