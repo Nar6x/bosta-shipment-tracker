@@ -764,22 +764,18 @@ body {
     font-weight: bold;
   }
 
-  .navbar-menu-container {
+  /* .navbar-menu-container {
     margin: 0 35px;
-  }
+  } */
 
   .navbar-container {
     width: 100%;
     padding: 0;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .logo {
     display: flex;
-  }
-
-  .logo img {
-    margin: 0 35px;
   }
 
   ul {
@@ -792,5 +788,9 @@ body {
 
   .mobile-menu {
     display: flex;
+  }
+
+  .track-shipment-dropdown {
+    width: 200px;
   }
 }
