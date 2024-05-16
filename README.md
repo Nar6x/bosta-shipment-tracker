@@ -1,4 +1,4 @@
-﻿# Geek Labs' Frontend Task
+﻿# Bosta's Technical Task
 -
 -
 -
