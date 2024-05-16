@@ -269,14 +269,14 @@ body {
     left: auto;
     right: auto;
     top: auto;
-    margin-right: 15px;
+    margin-right: 14px;
   }
 
   [dir="ltr"] .step-item:not(:first-child):before {
     left: auto;
     right: auto;
     top: auto;
-    margin-left: 20px;
+    margin-left: 14px;
   }
 
   .step.completed::after,
@@ -754,8 +754,13 @@ ul {
     display: none;
   }
 
+  .track-shipment {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
   .navbar-menu-container {
-    margin: 0 15px;
+    margin: 0 35px;
   }
 
   .navbar-container {
