@@ -679,9 +679,8 @@ ul {
 .mobile-menu {
   display: none;
   position: fixed;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: white;
 }
 
@@ -694,9 +693,6 @@ ul {
   padding: 0;
   margin: 0;
   position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -120%);
   width: 100%;
 }
 
@@ -711,11 +707,11 @@ ul {
 }
 
 [dir="rtl"] .mobile-menu ul li {
-  margin-right: 50px;
+  margin-right: 35px;
 }
 
 [dir="ltr"] .mobile-menu ul li {
-  margin-left: 50px;
+  margin-left: 35px;
 }
 
 .mobile-menu ul li:last-child {
