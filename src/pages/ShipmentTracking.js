@@ -32,7 +32,7 @@ const ShipmentTracking = () => {
         !shipmentData.CurrentStatus) && (
         <div className="search">
           <div className="search-label">{trackShipment}</div>
-          <div className="search-container">
+          <div className="search-wrapper">
             <input
               type="text"
               placeholder={trackingNumber}
@@ -44,7 +44,7 @@ const ShipmentTracking = () => {
               className="search-icon"
               style={{ width: 80 }}
               onClick={handleSubmit}
-            ></div>
+            />
           </div>
         </div>
       )}
