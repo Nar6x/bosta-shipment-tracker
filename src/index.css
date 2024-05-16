@@ -504,8 +504,14 @@ body {
     gap: 0;
   }
 
+  .details-table th,
   .details-table td {
     font-size: 14px;
+  }
+
+  .details-table th,
+  .details-table td {
+    padding: 10px;
   }
 
   .shipment-problem {
@@ -703,11 +709,11 @@ body {
 }
 
 [dir="rtl"] .mobile-menu ul li {
-  margin-right: 55px;
+  margin-right: 40px;
 }
 
 [dir="ltr"] .mobile-menu ul li {
-  margin-left: 55px;
+  margin-left: 40px;
 }
 
 .mobile-menu ul li:last-child {
@@ -744,6 +750,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  .navbar ul {
+    gap: 20px;
+  }
+
   .navbar-middle-section,
   .navbar-menu-container ul li:not(.track-shipment) {
     display: none;
