@@ -694,6 +694,7 @@ ul {
   margin: 0;
   position: absolute;
   width: 100%;
+  top: calc(5%);
 }
 
 .mobile-menu ul li {
@@ -767,7 +768,7 @@ ul {
   }
 
   .logo img {
-    margin: 0 50px;
+    margin: 0 35px;
   }
 
   ul {
