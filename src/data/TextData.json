@@ -1,0 +1,102 @@
+{
+  "navbar": {
+    "ar": {
+      "sales": "كلم المبيعات",
+      "pricing": "الأسعار",
+      "home": "الرئيسية",
+      "login": "تسجيل الدخول",
+      "trackShipment": "تتبع شحنتك",
+      "language": "ENG"
+    },
+    "en": {
+      "sales": "Contact Sales",
+      "pricing": "Pricing",
+      "home": "Home",
+      "login": "Sign In",
+      "trackShipment": "Track Shipment",
+      "language": "AR"
+    }
+  },
+  "shipmentHeader": {
+    "ar": {
+      "shipmentNumber": "رقم الشحنة",
+      "lastUpdate": "اخر تحديث",
+      "merchant": "اسم التاجر",
+      "promisedDate": "موعد التسليم خلال"
+    },
+    "en": {
+      "shipmentNumber": "Shipment Number",
+      "lastUpdate": "Last Update",
+      "merchant": "Merchant",
+      "promisedDate": "Delivery Date"
+    }
+  },
+  "timeline": {
+    "ar": {
+      "shipmentCreated": "تم إنشاء الشحنة",
+      "packageReceived": "تم إستلام الشحنة من التاجر",
+      "inTransit": "في الطريق",
+      "notYetShipped": "لم يتم الشحن بعد",
+      "outForDelivery": "الشحنة خرجت للتسليم",
+      "delivered": "تم التسليم",
+      "waitingForCustomerAction": "في انتظار إجراء العميل"
+    },
+    "en": {
+      "shipmentCreated": "Shipment Created",
+      "packageReceived": "Package Received",
+      "inTransit": "In Transit",
+      "notYetShipped": "Not Yet Shipped",
+      "outForDelivery": "Out for Delivery",
+      "delivered": "Delivered",
+      "waitingForCustomerAction": "Waiting for Customer Action"
+    }
+  },
+  "subheader": {
+    "ar": {
+      "shipmentDetails": "تفاصيل الشحنة",
+      "deliveryAddress": "عنوان التسليم"
+    },
+    "en": {
+      "shipmentDetails": "Shipment Details",
+      "deliveryAddress": "Delivery Address"
+    }
+  },
+  "tableHeader": {
+    "ar": {
+      "hub": "الفرع",
+      "date": "التاريخ",
+      "time": "الوقت",
+      "details": "تفاصيل"
+    },
+    "en": {
+      "hub": "Hub",
+      "date": "Date",
+      "time": "Time",
+      "details": "Details"
+    }
+  },
+  "hubs": {
+    "ar": {
+      "nasrCity": "مدينة نصر"
+    },
+    "en": {
+      "nasrCity": "Nasr City"
+    }
+  },
+  "misc": {
+    "ar": {
+      "trackingNumber": "رقم التتبع",
+      "issue": "هل يوجد مشكلة في شحنتك ؟!",
+      "reportIssue": "إبلاغ عن مشكلة",
+      "address": "امبابة شارع طلعت حرب مدينة العمال بجوار البرنس منزل 17 بلوك 33,,,Cairo",
+      "merchantName": "سوق.كوم"
+    },
+    "en": {
+      "trackingNumber": "Tracking No.",
+      "issue": "Is there a problem with your shipment ?!",
+      "reportIssue": "Report a problem",
+      "address": "Imbaba, Talaat Harb Street, Workers City, next to the Prince, House 17, Block 33,,,Cairo",
+      "merchantName": "SOUQ.COM"
+    }
+  }
+}
