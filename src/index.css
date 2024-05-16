@@ -5,6 +5,26 @@ body {
 
 /* App */
 
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 100%;
+  width: 80%;
+  margin-top: 19px;
+  background-color: #fbfbfb;
+  border: 1px solid #e3e3e3;
+  padding: 40px 35px;
+  border-radius: 8px;
+}
+
+.search-label {
+  margin-bottom: 10px;
+  color: #505d6e;
+  font-weight: 800;
+  font-size: 20px;
+}
+
 /* Shipment Tracking Details Section */
 .shipment-tracking-details-section {
   display: flex;
@@ -746,7 +766,7 @@ body {
   justify-content: center;
   width: 100%;
   position: relative;
-  top: 250px;
+  top: 200px;
 }
 
 @media (max-width: 768px) {

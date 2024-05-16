@@ -70,7 +70,7 @@ const ShipmentStatusStepper = ({ lang }) => {
     getTextForState("DELIVERED"),
   ];
 
-  // API DATA MISSING -CAN'T ACCOUNT FOR OTHER OUTCOMES-
+  // API DATA MISSING -CAN'T ACCOUNT FOR OTHER CASES-
 
   return (
     <div
