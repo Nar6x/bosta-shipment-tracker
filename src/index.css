@@ -14,10 +14,11 @@ body {
   margin-top: 19px;
   background-color: #fbfbfb;
   border: 1px solid #e3e3e3;
-  padding: 40px 35px;
+  padding: 20px 35px;
   border-radius: 8px;
   position: relative;
   z-index: 2;
+  height: 130px;
 }
 
 .search-wrapper {
@@ -26,7 +27,7 @@ body {
 }
 
 .search-label {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   color: #505d6e;
   font-weight: 800;
   font-size: 20px;
@@ -53,7 +54,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 85%;
   border: 1px solid #e3e3e3;
   border-radius: 5px;
 }
@@ -86,7 +87,6 @@ body {
   height: 1px;
   background-color: #e3e3e3;
   transform: translateY(-50%);
-  margin: 20px 0;
   z-index: -1;
 }
 
@@ -115,6 +115,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 25%;
+  padding-top: 25px;
 }
 
 .step-name {
@@ -167,7 +168,6 @@ body {
   border-color: #35b600;
   width: 20px;
   height: 20px;
-  transition: all 0.3s;
 }
 
 .step.error {
@@ -175,7 +175,6 @@ body {
   border-color: red;
   width: 20px;
   height: 20px;
-  transition: all 0.3s;
 }
 
 .step.action-needed {
@@ -183,7 +182,6 @@ body {
   border-color: #f9ba02;
   width: 20px;
   height: 20px;
-  transition: all 0.3s;
 }
 
 .step.completed::after,
@@ -195,7 +193,7 @@ body {
   width: 4px;
   height: 10px;
   border: 2px solid white;
-  top: calc(50% + -35px);
+  top: calc(50% + -21px);
   border-top: none;
   border-left: none;
   transform: rotate(45deg);
@@ -203,23 +201,20 @@ body {
 
 .step-item.completed:not(:first-child)::before {
   background-color: #35b600;
-  transition: all 0.3s;
 }
 
 .step-item.error:not(:first-child)::before {
   background-color: red;
-  transition: all 0.3s;
 }
 
 .step-item.action-needed:not(:first-child)::before {
   background-color: #f9ba02;
-  transition: all 0.3s;
 }
 
 .step-item:not(:first-child):before {
   content: "";
   position: absolute;
-  top: calc(50% - 27px);
+  top: calc(50% - 14px);
   height: 6px;
   width: 100%;
   transform: translateY(-50%);
@@ -256,7 +251,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 0 35px;
+    padding: 0 15px;
   }
 
   .step-item {
@@ -317,7 +312,6 @@ body {
     border-color: #35b600;
     width: 30px;
     height: 30px;
-    transition: all 0.3s;
   }
 
   .step.error {
@@ -325,7 +319,6 @@ body {
     border-color: red;
     width: 30px;
     height: 30px;
-    transition: all 0.3s;
   }
 
   .step.action-needed {
@@ -333,7 +326,11 @@ body {
     border-color: #f9ba02;
     width: 30px;
     height: 30px;
-    transition: all 0.3s;
+  }
+
+  .search {
+    width: 70%;
+    margin-top: -25px;
   }
 }
 
@@ -406,7 +403,7 @@ body {
 .shipment-details-section {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 85%;
 }
 
 /* Shipment Details Container */
@@ -550,6 +547,7 @@ body {
 
 .navbar {
   display: flex;
+  justify-content: center;
   position: fixed;
   border: 1px solid #e3e3e3;
   width: 100%;
@@ -572,8 +570,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3px 140px;
-  width: 80%;
+  padding: 3px 0;
+  width: 85%;
 }
 
 .navbar-middle-section,
@@ -633,10 +631,10 @@ body {
   position: absolute;
   top: 100%;
   width: 250px;
-  margin-top: 19px;
+  margin-top: 25px;
   background-color: white;
   border: 1px solid #e3e3e3;
-  padding: 40px 35px;
+  padding: 25px 35px;
   border-radius: 8px;
 }
 
@@ -684,16 +682,43 @@ body {
   border-radius: 0 10px 10px 0;
 }
 
-.dropdown-search {
-  width: calc(100% - 30px);
+.dropdown-search,
+.nav-dropdown-search {
   height: 40px;
-  border-radius: 10px;
   border: 1px solid #e3e3e3;
   padding: 0px 12px;
   font-family: "Cairo";
 }
 
+.dropdown-search {
+  width: calc(100% - 104px);
+}
+
+.nav-dropdown-search {
+  width: calc(100% - 70px);
+}
+
+[dir="rtl"] .dropdown-search {
+  border-radius: 0 10px 10px 0;
+}
+
+[dir="ltr"] .dropdown-search {
+  border-radius: 10px 0 0 10px;
+}
+
+[dir="rtl"] .nav-dropdown-search {
+  border-radius: 0 10px 10px 0;
+}
+
+[dir="ltr"] .dropdown-search {
+  border-radius: 10px 0 0 10px;
+}
+
 /* Logo */
+.logo {
+  display: flex;
+}
+
 .logo img {
   width: 112px;
   height: 36px;
@@ -794,7 +819,7 @@ body {
   }
 
   .navbar-container {
-    width: 100%;
+    width: 85%;
     padding: 0;
     justify-content: space-between;
   }

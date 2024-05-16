@@ -60,7 +60,7 @@ const Navbar = () => {
                     <input
                       type="text"
                       placeholder={trackingNumber}
-                      className="dropdown-search"
+                      className="nav-dropdown-search"
                       value={shipmentNumber}
                       onChange={(e) => setShipmentNumber(e.target.value)}
                     />
