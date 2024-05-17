@@ -6,7 +6,8 @@
       "home": "الرئيسية",
       "login": "تسجيل الدخول",
       "trackShipment": "تتبع شحنتك",
-      "language": "ENG"
+      "language": "ENG",
+      "mobileLang": "English"
     },
     "en": {
       "sales": "Contact Sales",
@@ -14,7 +15,8 @@
       "home": "Home",
       "login": "Sign In",
       "trackShipment": "Track Shipment",
-      "language": "AR"
+      "language": "AR",
+      "mobileLang": "العربية"
     }
   },
   "shipmentHeader": {
@@ -88,15 +90,13 @@
       "trackingNumber": "رقم التتبع",
       "issue": "هل يوجد مشكلة في شحنتك ؟!",
       "reportIssue": "إبلاغ عن مشكلة",
-      "address": "امبابة شارع طلعت حرب مدينة العمال بجوار البرنس منزل 17 بلوك 33,,,Cairo",
-      "merchantName": "سوق.كوم"
+      "address": "امبابة شارع طلعت حرب مدينة العمال بجوار البرنس منزل 17 بلوك 33,,,Cairo"
     },
     "en": {
       "trackingNumber": "Tracking No.",
       "issue": "Is there a problem with your shipment ?!",
       "reportIssue": "Report a problem",
-      "address": "Imbaba, Talaat Harb Street, Workers City, next to the Prince, House 17, Block 33,,,Cairo",
-      "merchantName": "SOUQ.COM"
+      "address": "Imbaba, Talaat Harb Street, Workers City, next to the Prince, House 17, Block 33,,,Cairo"
     }
   }
 }

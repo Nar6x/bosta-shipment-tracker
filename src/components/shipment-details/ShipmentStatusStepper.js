@@ -113,9 +113,7 @@ const ShipmentStatusStepper = ({ lang }) => {
             )}
             {/* Merchant Name */}
             {header === "merchant" && (
-              <span className="tracking-header">
-                {TextData.misc[lang].merchantName}
-              </span>
+              <span className="tracking-header">SOUQ.COM</span>
             )}
             {/* Promised Date */}
             {header === "promisedDate" && shipmentData && (

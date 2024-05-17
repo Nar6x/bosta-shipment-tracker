@@ -15,7 +15,7 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const { sales, pricing, home, login, trackShipment, language } =
+  const { sales, pricing, home, login, trackShipment, language, mobileLang } =
     TextData.navbar[lang];
   const { trackingNumber } = TextData.misc[lang];
 
@@ -49,25 +49,27 @@ const Navbar = () => {
         </div>
         <div className="navbar-menu-container">
           <ul>
-            <div className="dropdown-wrapper">
-              <li className="track-shipment" onClick={toggleDropdown}>
-                {trackShipment}
-              </li>
-              {showDropdown && (
-                <div className="track-shipment-dropdown">
-                  <div className="dropdown-label">{trackShipment}</div>
-                  <div className="search-container">
-                    <input
-                      type="text"
-                      placeholder={trackingNumber}
-                      className="nav-dropdown-search"
-                      value={shipmentNumber}
-                      onChange={(e) => setShipmentNumber(e.target.value)}
-                    />
-                    <div className="search-icon" onClick={handleSubmit}></div>
+            <div className="dropdown-container">
+              <div className="dropdown-wrapper">
+                <li className="track-shipment" onClick={toggleDropdown}>
+                  {trackShipment}
+                </li>
+                {showDropdown && (
+                  <div className="track-shipment-dropdown">
+                    <div className="dropdown-label">{trackShipment}</div>
+                    <div className="search-container">
+                      <input
+                        type="text"
+                        placeholder={trackingNumber}
+                        className="nav-dropdown-search"
+                        value={shipmentNumber}
+                        onChange={(e) => setShipmentNumber(e.target.value)}
+                      />
+                      <div className="search-icon" onClick={handleSubmit}></div>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
             <div className="burger-icon" onClick={toggleMobileMenu}>
               <Hamburger color="#475467" toggled={isOpen} toggle={setOpen} />
@@ -83,7 +85,7 @@ const Navbar = () => {
             <li>{home}</li>
             <li>{pricing}</li>
             <li>{sales}</li>
-            <li onClick={toggleLanguage}>{language}</li>
+            <li onClick={toggleLanguage}>{mobileLang}</li>
             <div className="sign-in">
               <button className="mobileSignInBtn">{login}</button>
             </div>
