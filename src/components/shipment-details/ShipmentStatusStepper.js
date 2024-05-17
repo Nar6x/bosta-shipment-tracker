@@ -6,7 +6,8 @@ import useDateFormatter from "../../hooks/useDateFormatter";
 const ShipmentStatusStepper = ({ lang }) => {
   const { shipmentData } = useApi();
 
-  const { formatDateShort, formatDateLong } = useDateFormatter();
+  const { formatDateShort, formatDateLong, formatDateWithMonthName } =
+    useDateFormatter();
 
   const shipmentHeaders = TextData.shipmentHeader[lang];
 
@@ -119,10 +120,16 @@ const ShipmentStatusStepper = ({ lang }) => {
             {header === "promisedDate" && shipmentData && (
               <span className="tracking-header">
                 {shipmentData.CurrentStatus.state === "DELIVERED"
-                  ? formatDateShort(shipmentData.CurrentStatus.timestamp, lang)
+                  ? formatDateWithMonthName(
+                      shipmentData.CurrentStatus.timestamp,
+                      lang
+                    )
                   : shipmentData.PromisedDate !== null
                   ? shipmentData.PromisedDate
-                  : formatDateShort(shipmentData.CurrentStatus.timestamp, lang)}
+                  : formatDateWithMonthName(
+                      shipmentData.CurrentStatus.timestamp,
+                      lang
+                    )}
               </span>
             )}
           </div>
