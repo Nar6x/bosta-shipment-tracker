@@ -19,8 +19,14 @@ const ShipmentStatusTable = ({ lang }) => {
         return TextData.timeline[lang].packageReceived;
       case "OUT_FOR_DELIVERY":
         return TextData.timeline[lang].outForDelivery;
+      case "NOT_YET_SHIPPED":
+        return TextData.timeline[lang].notYetShipped;
       case "DELIVERED":
         return TextData.timeline[lang].delivered;
+      case "WAITING_FOR_CUSTOMER_ACTION":
+        return TextData.timeline[lang].notDelivered;
+      case "DELIVERED_TO_SENDER":
+        return TextData.timeline[lang].cancelled;
       default:
         return null;
     }
@@ -28,16 +34,53 @@ const ShipmentStatusTable = ({ lang }) => {
 
   const renderTransitEvents = () => {
     if (!shipmentData) return null;
-    return shipmentData.TransitEvents.filter((event) =>
+
+    const events = shipmentData.TransitEvents.filter((event) =>
       getTextForState(event.state)
-    ).map((event, index) => (
-      <tr key={index}>
-        <td>{event.hub || "--"}</td>
-        <td>{formatDateShort(event.timestamp, lang)}</td>
-        <td>{formatTime(event.timestamp, lang)}</td>
-        <td>{getTextForState(event.state)}</td>
-      </tr>
-    ));
+    );
+
+    const currentState = shipmentData.CurrentStatus.state;
+    const isSpecialState =
+      currentState === "WAITING_FOR_CUSTOMER_ACTION" ||
+      currentState === "DELIVERED_TO_SENDER";
+
+    return events.map((event, index) => {
+      const isLastEvent = index === events.length - 1;
+      const displayState =
+        isSpecialState && isLastEvent
+          ? getTextForState("WAITING_FOR_CUSTOMER_ACTION")
+          : getTextForState(event.state);
+
+      const reasonText =
+        isSpecialState && isLastEvent
+          ? currentState === "WAITING_FOR_CUSTOMER_ACTION"
+            ? getTextForState("WAITING_FOR_CUSTOMER_ACTION")
+            : getTextForState("DELIVERED_TO_SENDER")
+          : null;
+
+      const reasonClass =
+        isSpecialState && isLastEvent
+          ? currentState === "WAITING_FOR_CUSTOMER_ACTION"
+            ? "action-needed"
+            : "error"
+          : "";
+
+      return (
+        <tr key={index}>
+          <td>{event.hub || "--"}</td>
+          <td>{formatDateShort(event.timestamp, lang)}</td>
+          <td>{formatTime(event.timestamp, lang)}</td>
+          <td>
+            <div className="td-reason">
+              {displayState}
+              {reasonText && (
+                <span className={`reason ${reasonClass}`}>{reasonText}</span>
+              )}
+            </div>
+          </td>
+        </tr>
+      );
+    });
   };
 
   return (

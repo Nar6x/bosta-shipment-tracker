@@ -41,7 +41,9 @@
       "notYetShipped": "لم يتم الشحن بعد",
       "outForDelivery": "الشحنة خرجت للتسليم",
       "delivered": "تم التسليم",
-      "waitingForCustomerAction": "في انتظار إجراء العميل"
+      "waitingForCustomerAction": "في انتظار إجراء العميل",
+      "notDelivered": "لم يتم تسليم الشحنة",
+      "cancelled": "تم إلغاء الشحنة"
     },
     "en": {
       "shipmentCreated": "Shipment Created",
@@ -50,7 +52,9 @@
       "notYetShipped": "Not Yet Shipped",
       "outForDelivery": "Out for Delivery",
       "delivered": "Delivered",
-      "waitingForCustomerAction": "Waiting for Customer Action"
+      "waitingForCustomerAction": "Waiting for Customer Action",
+      "notDelivered": "The shipment was not delivered",
+      "cancelled": "Cancelled"
     }
   },
   "subheader": {
@@ -90,13 +94,15 @@
       "trackingNumber": "رقم التتبع",
       "issue": "هل يوجد مشكلة في شحنتك ؟!",
       "reportIssue": "إبلاغ عن مشكلة",
-      "address": "امبابة شارع طلعت حرب مدينة العمال بجوار البرنس منزل 17 بلوك 33,,,Cairo"
+      "address": "امبابة شارع طلعت حرب مدينة العمال بجوار البرنس منزل 17 بلوك 33,,,Cairo",
+      "errorMessage": "رقم تتبع غير صحيح!"
     },
     "en": {
       "trackingNumber": "Tracking No.",
       "issue": "Is there a problem with your shipment ?!",
       "reportIssue": "Report a problem",
-      "address": "Imbaba, Talaat Harb Street, Workers City, next to the Prince, House 17, Block 33,,,Cairo"
+      "address": "Imbaba, Talaat Harb Street, Workers City, next to the Prince, House 17, Block 33,,,Cairo",
+      "errorMessage": "Invalid tracking number!"
     }
   }
 }

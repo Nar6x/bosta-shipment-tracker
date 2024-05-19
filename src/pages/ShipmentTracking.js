@@ -12,8 +12,9 @@ const ShipmentTracking = () => {
   const { issue, reportIssue, address } = TextData.misc[lang];
   const { trackingNumber } = TextData.misc[lang];
   const { trackShipment } = TextData.navbar[lang];
+  const { errorMessage } = TextData.misc[lang];
 
-  const { shipmentData, fetchData } = useApi();
+  const { shipmentData, fetchData, error } = useApi();
 
   const [shipmentNumber, setShipmentNumber] = useState("");
 
@@ -46,8 +47,10 @@ const ShipmentTracking = () => {
               onClick={handleSubmit}
             />
           </div>
+          {error && <div className="error-message">{errorMessage}</div>}
         </div>
       )}
+
       {shipmentData && shipmentData.CurrentStatus && (
         <>
           <div className="shipment-stepper">
