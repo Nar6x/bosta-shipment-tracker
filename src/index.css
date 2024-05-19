@@ -675,7 +675,7 @@ body {
   z-index: 1;
 }
 
-.navbar-menu-container ul li:is(:last-child) {
+.navbar-menu-container ul li:is(:nth-child(4)) {
   color: #f51c1d;
 }
 
@@ -685,12 +685,13 @@ body {
   transition: color 0.2s;
 }
 
-.track-shipment:hover::after {
-  border-color: #f51c1d;
+.active,
+.track-shipment.active::after {
+  color: red;
+  border-color: red !important;
 }
 
 .track-shipment::after {
-  content: "";
   display: inline-block;
   width: 4px;
   height: 4px;
@@ -700,22 +701,36 @@ body {
   top: calc(50% - 2px);
 }
 
+.track-shipment:hover::after {
+  border-color: #f51c1d;
+}
+
+.track-shipment.active::after,
+.dropdown-wrapper:hover .track-shipment,
+.dropdown-wrapper:hover .track-shipment::after {
+  border-color: #f51c1d;
+  color: #f51c1d;
+  content: "";
+}
+
 [dir="rtl"] .track-shipment::after {
-  transform: rotate(135deg);
+  transform: rotate(45deg);
   border-width: 0 2px 2px 0;
   margin-right: 5px;
 }
 
+[dir="rtl"] .track-shipment.active::after {
+  transform: rotate(135deg);
+}
+
 [dir="ltr"] .track-shipment::after {
-  transform: rotate(315deg);
+  transform: rotate(45deg);
   border-width: 0 2px 2px 0;
   margin-left: 5px;
 }
 
-.dropdown-wrapper {
-  position: relative;
-  border: 1px solid white;
-  background-color: white;
+[dir="ltr"] .track-shipment.active::after {
+  transform: rotate(315deg);
 }
 
 .track-shipment-dropdown {
@@ -725,25 +740,21 @@ body {
   position: absolute;
   top: 100%;
   width: 250px;
-  margin-top: 25px;
+  margin-top: 5px;
   background-color: white;
-  border: 1px solid #e3e3e3;
+  border: 2px solid #e3e3e3;
   padding: 25px 35px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 [dir="rtl"] .track-shipment-dropdown {
-  left: 0;
+  border-top-left-radius: 0;
+  left: -2px;
 }
 
 [dir="ltr"] .track-shipment-dropdown {
-  right: 0;
-}
-
-.dropdown-label {
-  margin-bottom: 10px;
-  color: #505d6e;
-  font-weight: 600;
+  border-top-right-radius: 0;
+  right: -2px;
 }
 
 .search-container {
@@ -774,6 +785,51 @@ body {
 [dir="ltr"] .search-icon {
   right: 0;
   border-radius: 0 10px 10px 0;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-label {
+  margin-bottom: 10px;
+  color: #505d6e;
+  font-weight: 600;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: calc(50% - 35px);
+  width: 135px;
+  border: 2px solid transparent;
+  border-bottom: none;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 20px 10px;
+}
+
+.dropdown-wrapper:hover .active,
+.dropdown-wrapper:hover.track-shipment.active::after {
+  color: red;
+  border-color: red !important;
+}
+
+[dir="rtl"] .dropdown-wrapper {
+  left: calc(50% - 30px);
+  padding-left: 20px;
+}
+
+[dir="ltr"] .dropdown-wrapper {
+  right: calc(50% - 30px);
+  padding-right: 20px;
+}
+
+.dropdown-wrapper:hover,
+.dropdown-wrapper.border-active {
+  border: 2px solid #e3e3e3;
+  border-bottom: none;
 }
 
 .dropdown-search,
@@ -942,5 +998,13 @@ body {
 
   .track-shipment-dropdown {
     width: 200px;
+  }
+
+  [dir="rtl"] .dropdown-wrapper {
+    left: calc(50% - 15px);
+  }
+
+  [dir="ltr"] .dropdown-wrapper {
+    right: calc(50% - 15px);
   }
 }

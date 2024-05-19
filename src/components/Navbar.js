@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Logo_AR from "../assets/bosta_ar.svg";
 import Logo_EN from "../assets/bosta_en.svg";
 import TextData from "../data/TextData.json";
 import { useLanguage } from "../context/LanguageContext";
 import { useApi } from "../context/ApiContext";
 import Hamburger from "hamburger-react";
+import useOutsideClick from "../hooks/useOutsideClick";
 
 const Navbar = () => {
   const { lang, toggleLanguage } = useLanguage();
@@ -15,21 +16,25 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const dropdownRef = useRef(null);
+  useOutsideClick(dropdownRef, () => setShowDropdown(false));
+
   const { sales, pricing, home, login, trackShipment, language, mobileLang } =
     TextData.navbar[lang];
   const { trackingNumber } = TextData.misc[lang];
 
   const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+    setShowDropdown((prev) => !prev);
   };
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
+    setMobileMenuOpen((prev) => !prev);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchData(shipmentNumber);
+    setShowDropdown(false);
   };
 
   const logoSrc = lang === "ar" ? Logo_AR : Logo_EN;
@@ -49,9 +54,16 @@ const Navbar = () => {
         </div>
         <div className="navbar-menu-container">
           <ul>
-            <div className="dropdown-container">
-              <div className="dropdown-wrapper">
-                <li className="track-shipment" onClick={toggleDropdown}>
+            <div className="dropdown-container" ref={dropdownRef}>
+              <div
+                className={`dropdown-wrapper ${
+                  showDropdown ? "border-active" : ""
+                }`}
+              >
+                <li
+                  className={`track-shipment ${showDropdown ? "active" : ""}`}
+                  onClick={toggleDropdown}
+                >
                   {trackShipment}
                 </li>
                 {showDropdown && (
