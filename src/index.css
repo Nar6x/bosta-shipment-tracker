@@ -408,7 +408,8 @@ body {
 
 .details-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 .details-table th {
@@ -420,7 +421,46 @@ body {
 .details-table td {
   padding: 15px;
   border-top: 2px solid #e3e3e380;
+}
+
+.details-table tr:is(:last-child) td {
   border-bottom: 2px solid #e3e3e380;
+}
+
+.details-table tr:is(:first-child) th {
+  border-top: 2px solid #e3e3e380;
+}
+
+[dir="rtl"] .details-table th:is(:first-child) {
+  border-top-right-radius: 5px;
+}
+
+[dir="rtl"] .details-table th:is(:last-child) {
+  border-top-left-radius: 5px;
+}
+
+[dir="rtl"] .details-table tr:is(:last-child) td:is(:first-child) {
+  border-bottom-right-radius: 5px;
+}
+
+[dir="rtl"] .details-table tr:is(:last-child) td:is(:last-child) {
+  border-bottom-left-radius: 5px;
+}
+
+[dir="ltr"] .details-table th:is(:first-child) {
+  border-top-left-radius: 5px;
+}
+
+[dir="ltr"] .details-table th:is(:last-child) {
+  border-top-right-radius: 5px;
+}
+
+[dir="ltr"] .details-table tr:is(:last-child) td:is(:first-child) {
+  border-bottom-left-radius: 5px;
+}
+
+[dir="ltr"] .details-table tr:is(:last-child) td:is(:last-child) {
+  border-bottom-right-radius: 5px;
 }
 
 .details-table td {
