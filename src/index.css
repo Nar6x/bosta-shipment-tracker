@@ -958,6 +958,21 @@ body {
   padding: 8px 0;
 }
 
+@media (max-width: 768px) {
+  .dropdown-wrapper {
+    width: 110px;
+    padding: 20px 0;
+  }
+
+  [dir="rtl"] .dropdown-wrapper {
+    padding-left: 10px;
+  }
+
+  [dir="ltr"] .dropdown-wrapper {
+    padding-right: 10px;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .navbar ul {
     gap: 20px;
